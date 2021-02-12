@@ -18,7 +18,7 @@ app.get('/urls', (req, res) => {
 
 app.get('/urls/:id', (req, res) => {
     const data=urls.find(d => d.short==req.params.id) 
-    data ? res.send(`https://${data.full}`): res.status(404).send("no data found")
+    data ? res.redirect(`https://${data.full}`): res.status(404).send("no data found")
 })
 
 app.post('/urls', function (req, res) {
