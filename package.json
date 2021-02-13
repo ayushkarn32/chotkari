@@ -7,7 +7,8 @@
     "start": "node sever.js"
   },
   "keywords": [
-    "postapi"
+    "chotkari",
+    "urlshortner"
   ],
   "author": "www.github.com/ayushkarn32",
   "license": "ISC",
