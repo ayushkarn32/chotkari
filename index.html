@@ -148,13 +148,13 @@
                     .then((data) =>{
                         if($("#copybox").length)
                         {
-                            document.getElementById('shorty').innerHTML="http://localhost:7000/urls/"+data[data.length-1].short;
+                            document.getElementById('shorty').innerHTML="chotkari.herokuapp.com/urls/"+data[data.length-1].short;
                         }
                         else
                         {
                             $('#fullbox').append('<div class="copybox" id="copybox" onclick="copy()">');
                             $('#copybox').append('<span id="shorty">');
-                            document.getElementById('shorty').innerHTML="http://localhost:7000/urls/"+data[data.length-1].short;
+                            document.getElementById('shorty').innerHTML="chotkari.herokuapp.com/urls/"+data[data.length-1].short;
                             $('#copybox').append('</span>');
                             $('#fullbox').append('</div>');
                         }
