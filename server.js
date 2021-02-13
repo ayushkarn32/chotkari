@@ -10,9 +10,9 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname+"/index.html")
   })
 
-// app.get('/urls', (req, res) => {
-//     res.send(urls)
-//   })
+app.get('/urls', (req, res) => {
+    res.send(urls)
+  })
 
 app.get('/urls/:id', (req, res) => {
     const data=urls.find(d => d.short==req.params.id) 
