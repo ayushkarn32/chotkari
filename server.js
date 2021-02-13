@@ -4,17 +4,15 @@ const cryptoRandomString = require('crypto-random-string');
 
 app.use(express.urlencoded({extended:false}))
 
-const urls=[
-  {id:1,full:"abc.com/xyz/post/123",short:"first"}
-];
+const urls=[];
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname+"/index.html")
   })
 
-app.get('/urls', (req, res) => {
-    res.send(urls)
-  })
+// app.get('/urls', (req, res) => {
+//     res.send(urls)
+//   })
 
 app.get('/urls/:id', (req, res) => {
     const data=urls.find(d => d.short==req.params.id) 
