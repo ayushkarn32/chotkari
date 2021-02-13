@@ -25,7 +25,6 @@ app.post('/urls', function (req, res) {
     full: req.body.inputurl,
     short:cryptoRandomString({length: 5, type: 'alphanumeric'})
   });
-  console.table(urls)
   res.redirect('/')
 })
 
