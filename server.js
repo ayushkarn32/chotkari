@@ -31,4 +31,4 @@ app.post('/urls', function (req, res) {
   res.redirect('/')
 })
 
-app.listen(7000);
+app.listen(process.env.PORT||3000);
