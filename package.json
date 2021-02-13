@@ -4,7 +4,7 @@
   "description": "shortens the url link",
   "main": "index.js",
   "scripts": {
-    "devStart": "nodemon server.js"
+    "start": "node sever.js"
   },
   "keywords": [
     "postapi"
