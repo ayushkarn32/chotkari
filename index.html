@@ -143,7 +143,7 @@
                 url: '/urls',
                 data: {inputurl:$("#inputurl").val()},
                 success: function () {
-                    fetch(`http://localhost:3000/urls/`)
+                    fetch(`https://chotkari.herokuapp.com/urls`)
                     .then(res => res.json())
                     .then((data) =>{
                         if($("#copybox").length)
