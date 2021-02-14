@@ -4,7 +4,9 @@ const cryptoRandomString = require('crypto-random-string');
 
 app.use(express.urlencoded({extended:false}))
 
-const urls=[];
+const urls=[
+{id:1,full:"abc.com/xyz/post/123",short:"first"}
+];
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname+"/index.html")
