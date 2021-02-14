@@ -5,7 +5,7 @@ const cryptoRandomString = require('crypto-random-string');
 app.use(express.urlencoded({extended:false}))
 
 const urls=[
-{id:1,full:"abc.com/xyz/post/123",short:"first"}
+  {id:1,full:"abc.com/xyz/post/123",short:"first"}
 ];
 
 app.get('/', (req, res) => {
@@ -18,7 +18,7 @@ app.get('/urls', (req, res) => {
 
 app.get('/urls/:id', (req, res) => {
     const data=urls.find(d => d.short==req.params.id) 
-    data ? res.redirect(`${data.full}`): res.status(404).send("no data found")
+    data ? res.send(`https://${data.full}`): res.status(404).send("no data found")
 })
 
 app.post('/urls', function (req, res) {
@@ -27,6 +27,7 @@ app.post('/urls', function (req, res) {
     full: req.body.inputurl,
     short:cryptoRandomString({length: 5, type: 'alphanumeric'})
   });
+  console.table(urls)
   res.redirect('/')
 })
 
