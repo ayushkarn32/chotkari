@@ -143,12 +143,12 @@
                 url: '/urls',
                 data: {inputurl:$("#inputurl").val()},
                 success: function () {
-                    fetch(`http://localhost:7000/urls/`)
+                    fetch(`http://localhost:3000/urls/`)
                     .then(res => res.json())
                     .then((data) =>{
                         if($("#copybox").length)
                         {
-                            document.getElementById('shorty').innerHTML="http://localhost:7000/urls/"+data[data.length-1].short;
+                            document.getElementById('shorty').innerHTML="http://chotkari.herokuapp.com/urls/"+data[data.length-1].short;
                         }
                         else
                         {
