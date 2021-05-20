@@ -28,7 +28,7 @@ app.post('/urls', function (req, res) {
   {
     new_url=url.replace("https://", "");
   }
-  else if(url.match("https://"))
+  else if(url.match("http://"))
   {
     new_url=url.replace("http://", "");
   }
