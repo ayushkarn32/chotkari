@@ -22,9 +22,22 @@ app.get('/urls/:id', (req, res) => {
 })
 
 app.post('/urls', function (req, res) {
+  let url=req.body.inputurl
+  let new_url=""
+  if(url.match("https://"))
+  {
+    new_url=url.replace("https://", "");
+  }
+  else if(url.match("https://"))
+  {
+    new_url=url.replace("http://", "");
+  }
+  else{
+    new_url=url;
+  }
   urls.push({
     id:urls.length+1,
-    full: req.body.inputurl,
+    full: new_url,
     short:cryptoRandomString({length: 5, type: 'alphanumeric'})
   });
   console.table(urls)
