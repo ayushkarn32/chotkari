@@ -71,7 +71,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 80vh;
+            height: 40vh;
             margin-top: -40px;
         }
         table{
@@ -110,7 +110,13 @@
         .copy{
             margin-right: 10px;
         }
-
+        .qrCode{
+            display: flex;
+            width:100%;
+            justify-content: center;
+            align-items:center;
+            margin-top: -20px;
+        }
         @media only screen and (max-width: 720px) {
             .short-box{
                 flex-direction: column;
@@ -135,6 +141,9 @@
         <div class="short-box" > 
                 <input type="text" name="inputurl" id="inputurl" class="urls" placeholder="https://www.example.com/xyz/2021/abc/posts"  required autocomplete="off" />
                 <input type="submit" class="button" onclick="send()" value="Shorten" />
+        </div>
+        <div class="qrCode">
+            <img src="https://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=https://chotkari.onrender.com/urls/vwvUb&chld=H|0" alt="qr-code">
         </div>
         <div class="fullbox" id="fullbox">
         </div>
@@ -161,6 +170,7 @@
                             $('#copybox').append('</span>');
                             $('#fullbox').append('</div>');
                         }
+                    generateQRCode(data[data.length - 1].short);
                     })
                     .catch((e)=>{
                         console.log(e)
@@ -168,8 +178,16 @@
                 }
               });
     }
-    </script>
-    <script>
+   
+    function generateQRCode(shortLink) {
+        var qrCodeUrl = "https://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=https://chotkari.onrender.com/urls/" + shortLink + "&chld=H|0";
+        var qrCodeImage = document.createElement("img");
+        qrCodeImage.src = qrCodeUrl;
+        qrCodeImage.alt = shortLink;
+        var qrCodeDiv = document.getElementsByClassName("qrCode")[0];
+        qrCodeDiv.innerHTML = ""; // Clear any existing QR code
+        qrCodeDiv.appendChild(qrCodeImage);
+    }    
         function copy()
             {
                 var r = document.createRange();
