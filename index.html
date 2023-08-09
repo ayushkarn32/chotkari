@@ -146,18 +146,18 @@
                 url: '/urls',
                 data: {inputurl:$("#inputurl").val()},
                 success: function () {
-                    fetch(`https://chotkari.herokuapp.com/urls`)
+                    fetch(`https://chotkari.onrender.com/urls`)
                     .then(res => res.json())
                     .then((data) =>{
                         if($("#copybox").length)
                         {
-                            document.getElementById('shorty').innerHTML="https://chotkari.herokuapp.com/urls/"+data[data.length-1].short;
+                            document.getElementById('shorty').innerHTML="https://chotkari.onrender.com/urls/"+data[data.length-1].short;
                         }
                         else
                         {
                             $('#fullbox').append('<div class="copybox" id="copybox" onclick="copy()">');
                             $('#copybox').append('<span id="shorty">');
-                            document.getElementById('shorty').innerHTML="https://chotkari.herokuapp.com/urls/"+data[data.length-1].short;
+                            document.getElementById('shorty').innerHTML="https://chotkari.onrender.com/urls/"+data[data.length-1].short;
                             $('#copybox').append('</span>');
                             $('#fullbox').append('</div>');
                         }
